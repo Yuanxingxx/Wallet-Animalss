@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/quiz/quiz",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "钱包小动物",
+    "navigationBarBackgroundColor": "#FFF9F3",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF9F3",
+    "enablePullDownRefresh": false
+  }
+}

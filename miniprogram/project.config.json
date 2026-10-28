@@ -1,0 +1,10 @@
+{
+  "appid": "",
+  "projectname": "wallet-animals",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "./",
+  "setting": {
+    "es6": true,
+    "minified": true
+  }
+}

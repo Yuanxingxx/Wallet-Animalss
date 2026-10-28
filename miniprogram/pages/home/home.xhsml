@@ -1,0 +1,14 @@
+<view class="page home-page">
+  <view class="eyebrow">一份关于喜欢与生活的小观察</view>
+  <view class="hero-art"><view class="spark spark-one">✦</view><view class="hero-animal">🐰</view><view class="little-note">给生活加一点甜</view><view class="spark spark-two">✧</view></view>
+  <view class="title">你的钱包里，<text class="line">住着哪只小动物？</text></view>
+  <view class="intro">买到喜欢的东西时，你更在意心情、实惠、品质，还是新鲜感？</view>
+  <view class="animal-grid"><view xhs:for="{{animals}}" xhs:key="name" class="animal-chip {{item.tone}}"><text class="chip-emoji">{{item.emoji}}</text><text>{{item.name}}</text></view></view>
+  <view class="soft-note">跟着直觉完成 8 道小题。<text class="line">没有标准答案，也没有哪一种更好。</text></view>
+  <button class="primary" bindtap="start" disabled="{{busy}}">{{busy ? '正在打开…' : '开始认识我的钱包  →'}}</button>
+  <view class="meta">约 1–2 分钟 · 免费查看完整结果 · 无需登录</view>
+  <view xhs:if="{{error}}" class="error">{{error}}</view>
+  <button class="text-button" bindtap="togglePrivacy">{{showPrivacy ? '收起数据说明' : '我的答案会被保存吗？'}}</button>
+  <view xhs:if="{{showPrivacy}}" class="privacy">无需登录，不主动收集姓名、手机号或账单。答案仅在本次运行的内存中计算，不上传、不持久保存；关闭后不保留，短暂切后台可能仍保留本次进度。平台自身的数据处理以其规则为准。</view>
+  <view class="footer">原创娱乐问卷，仅供自我观察。<text class="line">非标准心理量表，不属于专业评估。</text></view>
+</view>

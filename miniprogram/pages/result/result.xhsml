@@ -1,0 +1,21 @@
+<view class="page result-page">
+  <block xhs:if="{{!missing && info}}">
+    <view class="eyebrow center">这次，你的钱包住着一只……</view>
+    <view class="result-card" style="background-color:{{info.color}};">
+      <view class="result-badge">我的消费小动物</view><view class="result-animal">{{info.emoji}}</view>
+      <view class="result-title">{{info.name}}</view><view class="tags">{{info.tags}}</view>
+      <view class="quote">“{{info.quote}}”</view><view class="card-caption">8 道生活小题 · 一份最近的自己</view>
+    </view>
+    <view class="result-copy"><view class="section-heading">你的喜欢，有自己的形状</view><view class="body-copy">{{info.description}}</view>
+      <view class="copy-label">✦ 你的小优点</view><view class="body-copy">{{info.strength}}</view>
+      <view class="tip-box"><view class="copy-label">给你的一点小提醒</view><view class="body-copy">{{info.tip}}</view></view>
+    </view>
+    <view xhs:if="{{result.isTie}}" class="tie-note">{{result.tieNote}}</view>
+    <view class="soft-note">不同情境下，你可能表现出不同倾向。<text class="line">类型没有好坏之分。</text></view>
+    <button class="primary" bindtap="restart" disabled="{{busy}}">{{busy ? '正在打开…' : '再测一次  ↻'}}</button>
+    <view class="meta">喜欢这张结果？可以自行截图留念。</view>
+  </block>
+  <view xhs:else class="empty-state"><view class="hero-animal">🌱</view><view class="section-heading">本次记录已结束</view><view class="intro">答案没有被长期保存，重新开始就好。</view><button class="primary" bindtap="restart" disabled="{{busy}}">重新开始</button></view>
+  <view xhs:if="{{error}}" class="error">{{error}}</view>
+  <view class="footer">原创娱乐问卷，仅供自我观察。<text class="line">非标准心理量表，不属于专业评估。</text></view>
+</view>

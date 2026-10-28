@@ -1,0 +1,11 @@
+<view class="page quiz-page" xhs:if="{{question}}">
+  <view class="quiz-top"><text class="eyebrow">给自己的小观察</text><text class="counter">第 {{number}} / 8 题</text></view>
+  <view class="progress-track"><view class="progress-fill" style="width:{{progress}}%;"></view></view>
+  <view class="question-kicker">FOLLOW YOUR FEELING</view>
+  <view class="question-title">{{question.title}}</view>
+  <view class="question-hint">根据最近一个月，选最接近自己的一项。</view>
+  <view class="options"><button xhs:for="{{question.options}}" xhs:key="key" class="option {{selected === item.key ? 'selected' : ''}}" data-key="{{item.key}}" bindtap="choose" disabled="{{busy}}"><text class="option-key">{{item.key}}</text><text class="option-text">{{item.text}}</text><text class="check">{{selected === item.key ? '✓' : '○'}}</text></button></view>
+  <view class="quiz-actions"><button class="secondary previous" bindtap="previous" disabled="{{index === 0 || busy}}">上一题</button><button class="primary next" bindtap="next" disabled="{{!selected || busy}}">{{busy ? '正在打开…' : (index === 7 ? '看看我的消费类型' : '下一题  →')}}</button></view>
+  <view xhs:if="{{error}}" class="error">{{error}}</view>
+  <view class="footer">不必纠结，选更常出现的那个。<text class="line">可以返回上一题修改答案。</text></view>
+</view>
